@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { SignInSchema } from "../schema/authSchema";
-import { loginSuccess } from "../redux/slices/auth";
-import authService from "../services/auth";
-import { useAppDispatch } from "../redux/hooks";
+import { SignInSchema } from "../../schema/authSchema";
+import { loginSuccess } from "../../redux/slices/auth";
+import authService from "../../services/auth";
+import { useAppDispatch } from "../../redux/hooks";
 import { useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -108,7 +108,7 @@ export default function SignIn() {
             disabled={
               methods.formState.isSubmitting || !methods.formState.isValid
             }
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-blue-600 disabled:hover:bg-blue-200 disabled:cursor-not-allowed font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center disabled:bg-blue-600 disabled:hover:bg-blue-200 dark:focus:ring-blue-200 bg-blue-400 dark:bg-blue-500 disabled:cursor-not-allowed"
           >
             {methods.formState.isSubmitting ? <BeatLoader /> : "Login"}
           </button>
